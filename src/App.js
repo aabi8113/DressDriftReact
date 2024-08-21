@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom';
+import { Navigate, HashRouter as Router, Route, Routes } from 'react-router-dom';
 import { GlobalContext } from './context/GlobalState';
 import HomePage from './components/home/HomePage';
 import ItemDetail from './components/itemDetail/ItemDetail';
@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <Router>
         <Navbar />
         <Routes>
           {isAuthenticated ? (
@@ -36,7 +36,7 @@ function App() {
             </>
           )}
         </Routes>
-      </BrowserRouter>
+      </Router>
     </div>
   );
 }
